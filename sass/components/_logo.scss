@@ -1,0 +1,23 @@
+
+
+.logo {
+  font-family: var(--secondary-font-family);
+  @include fonts(24px, 700, 28px);
+  color: var(--main-dark-color);
+  letter-spacing: 0.03em;
+  display: block;
+  &__accent {
+    color: var(--accent-color);
+  }
+
+    &--theme-dark {
+      color: var(--main-light-color);
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .logo {
+    @include fonts(26px, 700, 31px);
+  }
+}

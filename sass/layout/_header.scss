@@ -1,0 +1,20 @@
+.page-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: var(--main-color);
+  position: relative;
+}
+
+.page-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .page-header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}

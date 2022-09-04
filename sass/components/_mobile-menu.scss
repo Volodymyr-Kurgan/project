@@ -1,0 +1,117 @@
+@media screen and (max-width: 767px) {
+  .mobile-menu {
+    $timing-duration:1250ms;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    top: -100vh;
+    left:0;
+    overflow: scroll;
+    background-color: var(--main-light-color);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform $timing-duration var(--timing-function),
+      opacity $timing-duration var(--timing-function),
+      visibility $timing-duration var(--timing-function);
+  }
+
+  .mobile-menu.is-open {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+      0px 1px 3px rgba(0, 0, 0, 0.16);
+    transform: translateY(100vh);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+  }
+
+  .mobile-menu__container {
+    position: relative;
+    padding-left: 40px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-menu__close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    line-height: 0;
+  }
+
+   .mobile-contacts__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  .mobile-social {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .mobile-menu__link {
+    @include fonts($size: 40px, $weight: 500, $lh: 47px);
+    letter-spacing: 0.02em;
+    color: var(--secondary-dark-color);
+
+    &--сurrent {
+      color: var(--accent-color);
+      border-bottom: 4px solid var(--accent-color);
+    }
+  }
+
+  .mobile-contacts__link {
+    @include fonts($size: 24px, $weight: 500, $lh: 28px);
+    letter-spacing: 0.02em;
+    color: var(--main-color);
+
+    &--phone {
+      @include fonts($size: 34px, $weight: 500, $lh: 40px);
+      letter-spacing: 0.02em;
+      color: var(--accent-color);
+    }
+    
+  }
+  .mobile-social__item {
+    position: relative;
+  }
+
+  .mobile-social__item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(33, 33, 33, 0.2);
+  }
+
+  .mobile-social__link {
+    @include fonts($size: 18px, $weight: 500, $lh: 22px);
+    letter-spacing: 0.02em;
+    color: var(--accent-color);
+  }
+
+  .mobile-menu__item {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}

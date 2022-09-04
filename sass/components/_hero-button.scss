@@ -1,0 +1,25 @@
+.hero-btn {
+    transition-property: background-color;
+    transition-duration: var(--timing-duration);
+    transition-timing-function: var(--timing-function);
+    border: none;
+    cursor: pointer;
+    color: var(--main-light-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    @include fonts(16px, 700, 30px);
+    text-align: center;
+    letter-spacing: 0.06em;
+    border-radius: 4px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+
+    &:hover,
+    &:focus {
+        background-color: #188ce8;
+
+    }
+}

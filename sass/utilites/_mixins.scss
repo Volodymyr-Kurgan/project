@@ -1,0 +1,12 @@
+@mixin сentering-xy_scailing($pos: absolute, $dx: 50%, $dy: 50%, $scale: 1) {
+  position: $pos;
+  left: $dx;
+  top: $dy;
+  transform: translate(-$dx, -$dy) scale($scale);
+}
+
+@mixin fonts($size: 14px, $weight: 400, $lh: 18px) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: calc($lh / $size);
+}
